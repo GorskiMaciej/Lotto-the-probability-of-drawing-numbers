@@ -5,59 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- dodać favicon -->
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,900&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
-    <nav><button>Lotto</button>
-        <button>mini Lotto</button>
-        <button>multi-multi</button>
-        <button>keno</button></nav>
-    <section>
-        <div class="parameters">
-            <div class="selectionText">
-                <p>Wybierz rodzaj gry <i class="far fa-arrow-alt-circle-up"></i></p>
-            </div>
+    <div class="wrapper">
+        <nav>
+            <button class="lotto">Lotto</button>
+            <button>mini Lotto</button>
+            <button>multi-multi</button>
+            <button>keno</button>
+        </nav>
+        <section>
+            <div class="parameters">
+                <div class="selectionText">
+                    <p>Wybierz rodzaj gry <i class="far fa-arrow-alt-circle-up"></i></p>
+                </div>
 
-            <div class="numberOfBets">
-                <p>Liczba zakładów</p>
-                <input type="number">
-            </div>
-            <div class="numberOfWinNumbers">
-                <p>Ilość trafionych liczb</p>
-                <select name="winNumbers" id="">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
-            <div class="numberOfSelectedNumbers">
-                <p>Ilość trafionych liczb</p>
-                <select name="selectedNumbers" id="">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
-            <div class="withPLus">
-                <label class="container">One
-                    <input type="checkbox" checked="checked">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
+                <div class="numberOfBets">
+                    <p>Liczba zakładów</p>
+                    <input type="number">
+                </div>
+                <div class="numberOfWinNumbers">
+                    <p>Ilość trafionych liczb</p>
+                    <select name="winNumbers" id="">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="numberOfSelectedNumbers">
+                    <p>Ilość typowanych liczb</p>
+                    <select name="selectedNumbers" id="">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="withPLus">
+                    <label class="container"> Plus
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
 
 
-        </div>
-        <div class="result">
-            <button class="calculate">Oblicz</button>
-            <div>Prawdopodobieństwo wynosi: 1: <span></span></div>
-        </div>
-    </section>
+            </div>
+            <div class="result">
+                <button class="calculate">Oblicz</button>
+                <div>Prawdopodobieństwo wynosi: 1: <span></span></div>
+            </div>
+        </section>
+    </div>
+    <script src="SCRIPTS/script.js"></script>
 </body>
 
 </html>
