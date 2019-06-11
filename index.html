@@ -22,11 +22,10 @@
             <button>keno</button>
         </nav>
         <section>
+            <div class="selectionText">
+                <p>Wybierz rodzaj gry <i class="far fa-arrow-alt-circle-up"></i></p>
+            </div>
             <div class="parameters">
-                <div class="selectionText">
-                    <p>Wybierz rodzaj gry <i class="far fa-arrow-alt-circle-up"></i></p>
-                </div>
-
                 <div class="numberOfBets">
                     <p>Liczba zakładów</p>
                     <input type="number">
@@ -49,17 +48,19 @@
                         <option value="3">3</option>
                     </select>
                 </div>
-                <div class="withPLus">
-                    <label class="container"> Plus
+                <div class="withPlus">
+                    <p>Plus</p>
+                    <label class="container">
                         <input type="checkbox" checked="checked">
                         <span class="checkmark"></span>
                     </label>
                 </div>
+                <button class="calculate">Oblicz</button>
 
 
             </div>
             <div class="result">
-                <button class="calculate">Oblicz</button>
+
                 <div>Prawdopodobieństwo wynosi: 1: <span></span></div>
             </div>
         </section>
