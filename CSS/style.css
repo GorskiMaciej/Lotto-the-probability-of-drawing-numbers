@@ -11,8 +11,9 @@ html {
 }
 
 body {
-    background-image: url(../IMG/patterns-polka-dots_640.png);
+    background-image: url(../IMG/patterns-polka-dots_640_v2.png);
     background-position-x: center;
+    background-color: #222;
 }
 
 .wrapper {
