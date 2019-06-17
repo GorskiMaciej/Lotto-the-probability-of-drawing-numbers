@@ -1,18 +1,20 @@
 class ColorChanger {
-    constructor() {
+    constructor(colorFromBtn, parametersFrame) {
+        colorFromBtn;
+        parametersFrame;
         let _color = this.changeColor;
-        this.getColor = () => _color;
-        this.changeColor();
+        // this.getColor = () => _color;
+        this.changeColor(colorFromBtn, parametersFrame);
+
+        console.log("jestem w obiekcie ColorChanger")
     }
     changeColor(colorFromBtn, parametersFrame) {
-        this.parametersFrame.style.border = `3px solid ${getComputedStyle(e.target).backgroundColor}`;
+        parametersFrame.style.border = `3px solid ${getComputedStyle(colorFromBtn).backgroundColor}`;
     }
 }
 
 class Probability {
     constructor() {
-
-
         this.btnLotto = document.querySelector('button.lotto');
         this.btnMiniLotto = document.querySelector('button.miniLotto');
         this.btnMultiMulti = document.querySelector('button.multiMulti');
@@ -20,6 +22,7 @@ class Probability {
         this.parametersFrame = document.querySelector('.parameters');
         this.btnCalculate = document.querySelector('button.calculate');
         this.numberOfBetsParameter = document.querySelector('.numberOfBets');
+
         this.btnLotto.addEventListener('click', this.startLotto)
         this.btnMiniLotto.addEventListener('click', (e) => {
             // console.log(e.target);
@@ -29,22 +32,18 @@ class Probability {
         })
         this.btnMultiMulti.addEventListener('click', (e) => {})
         this.btnKeno.addEventListener('click', (e) => {})
-
-        console.log("1")
-        console.log(this.numberOfBetsParameter)
     }
 
     startLotto() {
-        this.lottoProbability = new Lotto(this.numberOfBetsParameter);
-        // this.colorChanger = new this.colorChanger();
+        // this.lottoProbability = new Lotto(this.numberOfBetsParameter);
+        this.colorChanger = new ColorChanger(this.btnLotto, this.parametersFrame);
     }
 
 }
 class Lotto {
     constructor(numberOfBetsParameter) {
-        console.log("inicjalizacja obiektu powiodła się")
-        console.log(numberOfBetsParameter)
-        this.turnOnParameters(numberOfBetsParameter);
+        console.log("Jestem w obiekcie Lotto")
+
     }
     turnOnParameters(numberOfBetsParameter) {
         // numberOfBetsParameter.classList.addClass("active");
@@ -52,3 +51,5 @@ class Lotto {
 }
 
 const probability = new Probability();
+
+console.log(probability.colorChanger)
