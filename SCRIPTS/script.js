@@ -3,11 +3,12 @@ class ColorChanger {
         colorFromBtn;
         parametersFrame;
         let _color = this.changeColor;
-        // this.getColor = () => _color;
         this.changeColor(colorFromBtn, parametersFrame);
 
         console.log("jestem w obiekcie ColorChanger")
+        console.log(parametersFrame);
     }
+
     changeColor(colorFromBtn, parametersFrame) {
         parametersFrame.style.border = `3px solid ${getComputedStyle(colorFromBtn).backgroundColor}`;
     }
@@ -23,33 +24,48 @@ class Probability {
         this.btnCalculate = document.querySelector('button.calculate');
         this.numberOfBetsParameter = document.querySelector('.numberOfBets');
 
-        this.btnLotto.addEventListener('click', this.startLotto)
+        this.btnLotto.addEventListener('click', (e) => {
+            this.startLotto(e);
+            console.log(e.target)
+        });
         this.btnMiniLotto.addEventListener('click', (e) => {
-            // console.log(e.target);
-            // console.log(this.parametersFrame);
-            // console.log(getComputedStyle(e.target).backgroundColor);
-            this.parametersFrame.style.border = `3px solid ${getComputedStyle(e.target).backgroundColor}`;
-        })
-        this.btnMultiMulti.addEventListener('click', (e) => {})
-        this.btnKeno.addEventListener('click', (e) => {})
+            this.startMiniLotto(e);
+        });
+        this.btnMultiMulti.addEventListener('click', (e) => {
+            this.startMultiMulti(e);
+        });
+        this.btnKeno.addEventListener('click', (e) => {
+            this.startKeno(e);
+        });
+    };
+
+
+    startLotto(e) {
+        this.changeColor = new ColorChanger(e.target, this.parametersFrame);
     }
 
-    startLotto() {
-        // this.lottoProbability = new Lotto(this.numberOfBetsParameter);
-        this.colorChanger = new ColorChanger(this.btnLotto, this.parametersFrame);
+    startMiniLotto(e) {
+        this.changeColor = new ColorChanger(e.target, this.parametersFrame);
+    }
+
+    startMultiMulti(e) {
+        this.changeColor = new ColorChanger(e.target, this.parametersFrame);
+    }
+
+    startKeno(e) {
+        this.changeColor = new ColorChanger(e.target, this.parametersFrame);
     }
 
 }
-class Lotto {
-    constructor(numberOfBetsParameter) {
-        console.log("Jestem w obiekcie Lotto")
 
-    }
-    turnOnParameters(numberOfBetsParameter) {
-        // numberOfBetsParameter.classList.addClass("active");
-    }
-}
+// class Lotto {
+//     constructor(numberOfBetsParameter) {
+//         console.log("Jestem w obiekcie Lotto")
+
+//     }
+//     turnOnParameters(numberOfBetsParameter) {
+//         // numberOfBetsParameter.classList.addClass("active");
+//     }
+// }
 
 const probability = new Probability();
-
-console.log(probability.colorChanger)
